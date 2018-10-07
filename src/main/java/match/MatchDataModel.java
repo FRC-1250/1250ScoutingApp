@@ -7,7 +7,7 @@ final public class MatchDataModel {
 	};
 	
 	private enum endGameOptions {
-		CLIMB, PARK
+		CLIMB, PARK, NONE
 	};
 	
 	private int matchNumber;
@@ -18,7 +18,7 @@ final public class MatchDataModel {
 	private boolean placeScale;
 	private boolean placePort;
 	private String endGameAction;
-	private String notes;
+	private String matchNotes;
 	
 	public MatchDataModel(int matchNumber, int teamNumber, String autoPosition, boolean autoSuccess,
 			boolean placeSwitch, boolean placeScale, boolean placePort, String endGameAction, String notes) {
@@ -31,73 +31,74 @@ final public class MatchDataModel {
 		setPlaceScale(placeScale);
 		setPlacePort(placePort);
 		setEndGameAction(endGameAction);
-		setNotes(notes);
+		setMatchNotes(notes);
 	}
 	
-	int getMatchNumber() {
+	public int getMatchNumber() {
 		return matchNumber;
 	}
 	
-	void setMatchNumber(int matchNumber) {
+	public void setMatchNumber(int matchNumber) {
 		if(matchNumber > 0)
 			this.matchNumber = matchNumber;
 		else
 			throw new IllegalArgumentException(); 
 	}
 	
-	int getTeamNumber() {
+	public int getTeamNumber() {
 		return teamNumber;
 	}
 	
-	void setTeamNumber(int teamNumber) {
+	public void setTeamNumber(int teamNumber) {
 		if(teamNumber > 0)
 			this.teamNumber = teamNumber;
 		else
 			throw new IllegalArgumentException();
 	}
 	
-	String getAutoPosition() {
+	public String getAutoPosition() {
 		return autoPosition;
 	}
 	
-	void setAutoPosition(String autoPosition) {	
+	public void setAutoPosition(String autoPosition) {	
 		for(autoPositions pos : autoPositions.values()) {
-			if(autoPosition.toUpperCase() == pos.toString())
+			if(autoPosition.toUpperCase().equals(pos.toString())) {
 				this.autoPosition = autoPosition;
-			else
-				throw new IllegalArgumentException();
+				return;
+			}
 		}
+		throw new IllegalArgumentException();
 	}
 	
-	boolean isAutoSuccess() {
+	public boolean isAutoSuccess() {
 		return autoSuccess;
 	}
 	
-	void setAutoSuccess(boolean autoSuccess) {
+	public void setAutoSuccess(boolean autoSuccess) {
 		this.autoSuccess = autoSuccess;
 	}
 	
-	boolean isPlaceSwitch() {
+	public boolean isPlaceSwitch() {
 		return placeSwitch;
 	}
 	
-	void setPlaceSwitch(boolean placeSwitch) {
+	public void setPlaceSwitch(boolean placeSwitch) {
 		this.placeSwitch = placeSwitch;
 	}
 	
-	boolean isPlaceScale() {
+	public boolean isPlaceScale() {
 		return placeScale;
 	}
 	
-	void setPlaceScale(boolean placeScale) {
+	public void setPlaceScale(boolean placeScale) {
 		this.placeScale = placeScale;
 	}
 	
-	boolean isPlacePort() {
+	public boolean isPlacePort() {
 		return placePort;
 	}
 	
-	void setPlacePort(boolean placePort) {
+	public void setPlacePort(boolean placePort) {
 		this.placePort = placePort;
 	}
 	
@@ -105,20 +106,21 @@ final public class MatchDataModel {
 		return endGameAction;
 	}
 	
-	void setEndGameAction(String endGameOption) {	
+	public void setEndGameAction(String endGameOption) {	
 		for(endGameOptions opt : endGameOptions.values()) {
-			if(endGameOption.toUpperCase() == opt.toString())
+			if(endGameOption.toUpperCase().equals(opt.toString())) {
 				this.autoPosition = endGameOption;
-			else
-				throw new IllegalArgumentException();
+				return;
+			}
 		}
+		throw new IllegalArgumentException();
 	}
 
-	String getNotes() {
-		return notes;
+	public String getMatchNotes() {
+		return matchNotes;
 	}
 
-	void setNotes(String notes) {
-		this.notes = notes;
+	public void setMatchNotes(String notes) {
+		this.matchNotes = notes;
 	}
 }
