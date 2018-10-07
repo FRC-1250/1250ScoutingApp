@@ -20,7 +20,7 @@ body {background-color: #282b30}
 </style>
 </head>
 <body>
-<h1><img src="https://media.discordapp.net/attachments/404467720797552644/498583752176566272/051818_SPACE.png" width="102" height="88" alt=""/>Scouting Home</h1>
+<h1><img src="https://media.discordapp.net/attachments/404467720797552644/498583752176566272/051818_SPACE.png" width="102" height="88" alt=""/>Match Scouting</h1>
 <div class="eform">
   <form action="#" th:action="@{/match}" th:object="${match}" method="post" >
 <input type="hidden" name="subject" value="Form Submission" />
@@ -42,6 +42,21 @@ body {background-color: #282b30}
     Scale</label>
   <br>
 </p>
+<p> Auton Position</p>
+<p>
+  <label>
+    <input type="checkbox" name="Auton Type" value="0" id="AutonPos_0">
+    Left</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Auton Type" value="1" id="AutonPos_1">
+    Center</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Auton Type" value="2" id="AutonPos_2">
+    Right</label>
+  <br>
+</p>
 <p>Auton Successful?</p>
 <p>
   <label>
@@ -53,29 +68,33 @@ body {background-color: #282b30}
     No</label>
   <br>
 </p>
-<p>Scoring Type</p>
 
-<table width="200">
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="0" id="Scoringtype_0">
-      Scale</label></td>
-  </tr>
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="1" id="Scoringtype_1">
-      Switch</label></td>
-  </tr>
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="2" id="Scoringtype_2">
-      Vault</label></td>
-  </tr>
 </table>
-<p>Amount Scored <input type="text" name="AmoutnScored"> </p>
-<p>Amount Missed <input type="text" name="AmountMissed"> </p>
-<p>Climb or Park Type <input type="text" name="ClimbParkType"> </p>
-<p>Climb or Park Success <input type="text" name="ClimbParkSuccess"> </p>
+
+<p>Can Scale?<input type="checkbox" name="CanScale?" value="1" id="CanScale"></p>
+<p>Can Switch?<input type="checkbox" name="CanSwitch?" value="1" id="CanSwitch"></p>
+<p>Can Vault?<input type="checkbox" name="CanVault?" value="1" id="CanVault"></p>
+	
+<p>Amount Scored Scale <input type="number" name="AmoutnScoredScale"> </p>
+<p>Amount Scored Switch <input type="number" name="AmoutnScoredSwitch"> </p>
+<p>Amount Scored Vault <input type="number" name="AmoutnScoredVault"> </p>
+	
+<p> End Game Action</p>
+<p>
+  <label>
+    <input type="checkbox" name="Action Type" value="0" id="Action_0">
+    Climb</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Action Type" value="1" id="Action_1">
+    Park</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Action Type" value="2" id="Action_2">
+    None</label>
+  <br>
+</p>
+
 <p><textarea name="ScoutNotes" cols="40" rows="10">
 Addition Scouting Notes Here</textarea></p>
 <input type="submit">

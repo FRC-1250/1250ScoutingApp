@@ -22,9 +22,9 @@ public class MatchDataController {
 	    	sql = "Select * FROM `match` WHERE matchNumber=" + matchNumber;
 			ResultSet set = Mariadb.Query(sql);		
 			set.last();
-			MatchDataModel data = new MatchDataModel(set.getInt("matchNumber"), set.getInt("teamNumber"), set.getString("autoPosition"), 
+			MatchDataModel data = new MatchDataModel(set.getInt("matchNumber"), set.getInt("teamNumber"), set.getString("autoPosition"),set.getString("autoType"), 
 					set.getBoolean("autoSuccess"), set.getBoolean("placeSwitch"), set.getBoolean("placeScale"), set.getBoolean("placePort"), 
-					set.getString("endGameAction"), set.getString("notes"));
+					set.getInt("scoreScale"), set.getInt("scoreSwitch"), set.getInt("scoreVault"), set.getString("endGameAction"), set.getString("notes"));
 						
 			model.addAttribute("match", data);
 		} catch (SQLException e) {
