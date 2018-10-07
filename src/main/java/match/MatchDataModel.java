@@ -22,7 +22,6 @@ final public class MatchDataModel {
 	
 	public MatchDataModel(int matchNumber, int teamNumber, String autoPosition, boolean autoSuccess,
 			boolean placeSwitch, boolean placeScale, boolean placePort, String endGameAction, String notes) {
-		super();
 		setMatchNumber(matchNumber);
 		setTeamNumber(teamNumber);
 		setAutoPosition(autoPosition);
@@ -34,6 +33,9 @@ final public class MatchDataModel {
 		setMatchNotes(notes);
 	}
 	
+	public MatchDataModel() {
+	}
+
 	public int getMatchNumber() {
 		return matchNumber;
 	}
@@ -102,14 +104,14 @@ final public class MatchDataModel {
 		this.placePort = placePort;
 	}
 	
-	String getEndGameAction() {
+	public String getEndGameAction() {
 		return endGameAction;
 	}
 	
 	public void setEndGameAction(String endGameOption) {	
 		for(endGameOptions opt : endGameOptions.values()) {
 			if(endGameOption.toUpperCase().equals(opt.toString())) {
-				this.autoPosition = endGameOption;
+				this.endGameAction = endGameOption;
 				return;
 			}
 		}
