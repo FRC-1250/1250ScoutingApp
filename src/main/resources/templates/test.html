@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>G</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'MatchNumber: ' + ${match.matchNumber}" />
+    <p th:text="'TeamNumber ' + ${match.teamNumber}" />
+    <p th:text="'AutoPos ' + ${match.autoPosition}" />
+    <p th:text="'AutoSuccess: ' + ${match.autoSuccess}" />
+    <p th:text="'PlaceSwitch: ' + ${match.placeSwitch}" />
+    <p th:text="'PLaceScale: ' + ${match.placeScale}" />
+    <p th:text="'PlacePort: ' + ${match.placePort}" />
+    <p th:text="'EndGame: ' + ${match.endGameAction}" />
+    <p th:text="'Notes: ' + ${match.notes}" />
+</body>
+</html>
