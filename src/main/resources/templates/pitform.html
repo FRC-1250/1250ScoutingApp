@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pit Scouting</title>
+<style>
+body {background-color: #282b30}
+	h1 {color: #ffffff}
+	p {color: #ffffff}
+	table {color: #ffffff}
+	nav {color:#ffffff}
+	h1 {background: #23272a}
+	h1 {color: #7289da}
+	h1{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}	
+	nav {color: #7289da}
+	p{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-size: 200%}
+	h1{font-size: 400%}
+	
+	
+</style>
+</head>
+<body>
+<h1><img src="../Desktop/051818_SPACE.png" width="102" height="88" alt=""/>Pit Scouting</h1>
+	
+
+	
+<div class="eform">
+  <form action="/gdform.php" method="post">
+<input type="hidden" name="subject" value="Form Submission" />
+<input type="hidden" name="redirect" value="one.html" />
+<p>Team Number <input type="number" name="TeamNumber"> </p>
+<p>Team Name <input type="text" name="TeamName"> </p>
+<p> Auton Type</p>
+<p>
+  <label>
+    <input type="checkbox" name="Auton Type" value="0" id="AutonType_0">
+    Baseline</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Auton Type" value="1" id="AutonType_1">
+    Switch</label>
+  <br>
+  <label>
+    <input type="checkbox" name="Auton Type" value="2" id="AutonType_2">
+    Scale</label>
+  <br>
+	<label>
+    <input type="checkbox" name="Auton Type" value="3" id="AutonType_3">
+    None</label>
+  <br>
+</p>
+<p>Robot Scoring Type</p>
+
+<table width="200">
+  <tr>
+    <td><label>
+      <input type="checkbox" name="Scoring type" value="0" id="Scoringtype_0">
+      Scale</label></td>
+  </tr>
+  <tr>
+    <td><label>
+      <input type="checkbox" name="Scoring type" value="1" id="Scoringtype_1">
+      Switch</label></td>
+  </tr>
+  <tr>
+    <td><label>
+      <input type="checkbox" name="Scoring type" value="2" id="Scoringtype_2">
+      Vault</label></td>
+  </tr>
+</table>
+
+<p>Scale Score Claim <input type="number" name="Scale Claim"> </p>
+<p>Switch Score Claim <input type="number" name="Scale Claim"> </p>
+<p>Vault Score Claim <input type="number" name="Scale Claim"> </p>
+	  
+<p><textarea name="ScoutNotes" cols="40" rows="10">
+Addition Scouting Notes Here</textarea></p>
+<input type="submit">
+</form>
+
+</div>
+	
+</body>
+
+</html>
