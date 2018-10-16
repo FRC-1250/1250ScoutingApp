@@ -1,7 +1,7 @@
 package match;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.sql.rowset.CachedRowSet;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +20,14 @@ public class MatchDataController {
 
 		try {
 	    	sql = "Select * FROM `match` WHERE matchNumber=" + matchNumber;
-			ResultSet set = Mariadb.Query(sql);		
+	    	CachedRowSet set = Mariadb.Query(sql);		
 			set.last();
 			MatchDataModel data = new MatchDataModel(set.getInt("matchNumber"), set.getInt("teamNumber"), set.getString("autoPosition"), 
 					set.getBoolean("autoSuccess"), set.getBoolean("placeSwitch"), set.getBoolean("placeScale"), set.getBoolean("placePort"), 
 					set.getString("endGameAction"), set.getString("notes"));
 						
 			model.addAttribute("match", data);
+			set.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
