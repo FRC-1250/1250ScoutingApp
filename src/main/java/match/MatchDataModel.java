@@ -21,7 +21,7 @@ final public class MatchDataModel {
 	private boolean autoSuccess;
 	private boolean placeSwitch;
 	private boolean placeScale;
-	private boolean placePort;
+	private boolean placeVault;
 	private int scoreScale;
 	private int scoreSwitch;
 	private int scoreVault;
@@ -37,10 +37,10 @@ final public class MatchDataModel {
 		setAutoSuccess(autoSuccess);
 		setPlaceSwitch(placeSwitch);
 		setPlaceScale(placeScale);
-		setPlacePort(placePort);
+		setPlaceVault(placePort);
 		setScoreScale(scoreScale);
 		setScoreSwitch(scoreSwitch);
-		setScoreSwitch(scoreVault);
+		setScoreVault(scoreVault);
 		setEndGameAction(endGameAction);
 		setMatchNotes(notes);
 	}
@@ -123,12 +123,12 @@ final public class MatchDataModel {
 		this.placeScale = placeScale;
 	}
 	
-	public boolean isPlacePort() {
-		return placePort;
+	public boolean isPlaceVault() {
+		return placeVault;
 	}
 	
-	public void setPlacePort(boolean placePort) {
-		this.placePort = placePort;
+	public void setPlaceVault(boolean placePort) {
+		this.placeVault = placePort;
 	}
 
 	public int getScoreScale() {
