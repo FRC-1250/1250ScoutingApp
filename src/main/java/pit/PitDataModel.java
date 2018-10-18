@@ -81,7 +81,7 @@ final public class PitDataModel {
 	}
 	
 	public boolean istypeSwitch() {
-		return typeScale;
+		return typeSwitch;
 	}
 	
 	public void setTypeSwitch(boolean typeSwitch) {
