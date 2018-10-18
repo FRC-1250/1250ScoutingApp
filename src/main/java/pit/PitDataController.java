@@ -22,8 +22,10 @@ public class PitDataController {
 	    	sql = "Select * FROM `pit` WHERE teamNumber=" + teamNumber;
 			ResultSet set = Mariadb.Query(sql);		
 			set.last();
-			PitDataModel data = new PitDataModel(set.getInt("teamNumber"), set.getString("teamName"), set.getString("autoType"), set.getString("robotType"), set.getInt("scaleClaim")
-					, set.getInt("switchClaim"), set.getInt("vaultClaim"), set.getString("pitNotes"));
+			PitDataModel data = new PitDataModel(set.getInt("teamNumber"), set.getString("teamName"), set.getInt("scaleClaim")
+					, set.getInt("switchClaim"), set.getInt("vaultClaim"), set.getString("pitNotes"), set.getBoolean("autoBase")
+					, set.getBoolean("autoSwitch"), set.getBoolean("autoscale"), set.getBoolean("typeScale"), set.getBoolean("typeSwitch")
+					, set.getBoolean("typeVault"));
 						
 			model.addAttribute("pit", data);
 		} catch (SQLException e) {

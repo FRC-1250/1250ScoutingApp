@@ -34,11 +34,10 @@ body {background-color: #282b30}
 <p>Team Name <input th:field="*{teamName}" type="text" name="TeamName"> </p>
 <p> Auton Type</p>
 
-
-<input type="radio" th:field="*{autoType}" name="AutoType" value="Baseline"> Baseline <br>
-<input type="radio" th:field="*{autoType}" name="AutoType" value="Switch"> Switch <br>
-<input type="radio" th:field="*{autoType}" name="AutoType" value ="Scale"> Scale <br>	
-<input type="radio" th:field="*{autoType}" name="AutoType" value ="None"> None <br>	  
+	  
+<p>Auto Scale?<input type="checkbox"  th:field="*{autoBase}" name="AutoScale?"  value="autoBaseline" id="Baseline"></p>
+<p>Auto Switch?<input type="checkbox" th:field="*{autoSwitch}" name="AutoSwitch?" value="autoSwitch" id="Switch"></p>
+<p>Auto Vault?<input type="checkbox" th:field="*{autoScale}" name="AutoVault?" value="autoScale" id="Scale"></p>
 
 <p>Robot Scoring Type</p>
 	 

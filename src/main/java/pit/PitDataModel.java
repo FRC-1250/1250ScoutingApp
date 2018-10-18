@@ -1,34 +1,36 @@
 package pit;
 
 final public class PitDataModel {
-	
-	private enum autoTypes {
-		BASELINE, SWITCH, SCALE, NONE
-	};
-	
-	private enum robotTypes{
-		SCALE, SWITCH, VAULT
-	};
 
 	private int teamNumber;
 	private String teamName;
-	private String autoType;
-	private String robotType;
 	private int scaleClaim;
 	private int switchClaim;
 	private int vaultClaim;
 	private String pitNotes;
+	private boolean autoBase;
+	private boolean autoSwitch;
+	private boolean autoScale;
+	private boolean typeScale;
+	private boolean typeSwitch;
+	private boolean typeVault;
 	
-	public PitDataModel(int teamNumber, String teamName, String autoType, String robotType, int scaleClaim, int switchClaim, int vaultClaim, String pitNotes) {
+	public PitDataModel(int teamNumber, String teamName, int scaleClaim, int switchClaim, int vaultClaim
+						, String pitNotes, boolean autoBase, boolean autoScale, boolean autoSwitch,
+						boolean typeScale, boolean typeSwitch, boolean typeVault) {
 		
 		setTeamNumber(teamNumber);
 		setTeamName(teamName);
-		setAutoType(autoType);
-		setRobotType(robotType);
 		setScaleClaim(scaleClaim);
 		setSwitchClaim(switchClaim);
 		setVaultClaim(vaultClaim);
 		setPitNotes(pitNotes);
+		setAutoBase(autoBase);
+		setAutoSwitch(autoSwitch);
+		setAutoScale(autoScale);
+		setTypeScale(typeScale);
+		setTypeSwitch(typeSwitch);
+		setTypeVault(typeVault);
 		
 	}
 	
@@ -46,6 +48,47 @@ final public class PitDataModel {
 			throw new IllegalArgumentException();
 	}
 	
+	public boolean isAutoBase() {
+		return autoBase;
+	}
+	
+	public void setAutoBase(boolean autoBase) {
+		this.autoBase = autoBase;
+	}
+	
+	public boolean isAutoScale() {
+		return autoScale;
+	}
+	
+	public void setAutoScale(boolean autoScale) {
+		this.autoScale = autoScale;
+	}
+	
+	public boolean isAutoSwitch() {
+		return autoSwitch;
+	}
+	
+	public void setAutoSwitch(boolean autoSwitch) {
+		this.autoSwitch = autoSwitch;
+	}
+	
+	public boolean istypeScale() {
+		return typeScale;
+	}
+	
+	public void setTypeScale(boolean typeScale) {
+		this.typeScale = typeScale;
+	}
+	
+	public boolean istypeSwitch() {
+		return typeScale;
+	}
+	
+	public void setTypeSwitch(boolean typeSwitch) {
+		this.typeSwitch = typeSwitch;
+	}
+	
+	
 	public String getTeamName() {
 		return teamName;
 	}
@@ -54,33 +97,16 @@ final public class PitDataModel {
 		this.teamName = teamName;
 	}
 	
-	public String getAutoType() {
-		return autoType;
+	
+	public boolean istypeVault() {
+		return typeVault;
 	}
 	
-	public void setAutoType(String autoType) {	
-		for(autoTypes type : autoTypes.values()) {
-			if(autoType.toUpperCase().equals(type.toString())) {
-				this.autoType = autoType;
-				return;
-			}
-		}	
-		throw new IllegalArgumentException();
-	}	
-	
-	public String getRobotType() {
-		return robotType;
+	public void setTypeVault(boolean typeVault) {
+		this.typeVault = typeVault;
 	}
 	
-	public void setRobotType(String robotType) {	
-		for(robotTypes type : robotTypes.values()) {
-			if(robotType.toUpperCase().equals(type.toString())) {
-				this.robotType = robotType;
-				return;
-			}
-		}	
-		throw new IllegalArgumentException();
-	}	
+	
 	
 	public int getScaleClaim() {
 		return scaleClaim;
