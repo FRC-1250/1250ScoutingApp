@@ -32,18 +32,18 @@ body {background-color: #282b30}
 <input type="hidden" name="redirect" value="one.html" />
 <p>Team Number <input th:field="*{teamNumber}" type="number" name="TeamNumber"> </p>
 <p>Team Name <input th:field="*{teamName}" type="text" name="TeamName"> </p>
-<p> Auton Type</p>
-
 	  
-<p>Auto Scale?<input type="checkbox"  th:field="*{autoBase}" name="AutoScale?"  value="autoBaseline" id="Baseline"></p>
-<p>Auto Switch?<input type="checkbox" th:field="*{autoSwitch}" name="AutoSwitch?" value="autoSwitch" id="Switch"></p>
-<p>Auto Vault?<input type="checkbox" th:field="*{autoScale}" name="AutoVault?" value="autoScale" id="Scale"></p>
+<p> Auton Type</p>
+	  
+<p>Auto Scale?<input type="checkbox"  th:field="*{autoBase}" name="AutoScale?" id="Baseline"></p>
+<p>Auto Switch?<input type="checkbox" th:field="*{autoSwitch}" name="AutoSwitch?" id="Switch"></p>
+<p>Auto Vault?<input type="checkbox" th:field="*{autoScale}" name="AutoVault?" id="Scale"></p>
 
 <p>Robot Scoring Type</p>
 	 
-<p>Can Scale?<input type="checkbox"  th:field="*{robotType}" name="CanScale?"  value="CanScale" id="CanScale"></p>
-<p>Can Switch?<input type="checkbox" th:field="*{robotType}" name="CanSwitch?" value="CanSwitch" id="CanSwitch"></p>
-<p>Can Vault?<input type="checkbox" th:field="*{robotType}" name="CanVault?" value="CanVault" id="CanVault"></p>
+<p>Can Scale?<input type="checkbox"  th:field="*{typeScale}" name="CanScale?" id="CanScale"></p>
+<p>Can Switch?<input type="checkbox" th:field="*{typeSwitch}" name="CanSwitch?" id="CanSwitch"></p>
+<p>Can Vault?<input type="checkbox" th:field="*{typeVault}" name="CanVault?" id="CanVault"></p>
 
 <p>Scale Score Claim <input th:field="*{scaleClaim}" type="number" name="Scale Claim"> </p>
 <p>Switch Score Claim <input th:field="*{switchClaim}" type="number" name="Switch Claim"> </p>

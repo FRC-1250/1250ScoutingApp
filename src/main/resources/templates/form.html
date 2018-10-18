@@ -45,13 +45,13 @@ body {background-color: #282b30}
 			<p>Can Switch?<input type="checkbox" th:field="*{placeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
 			<p>Can Vault?<input type="checkbox" th:field="*{placeVault}" id="Vault" onchange="toggleScore(this.id)"></p>
 				
-			<p>Amount Scored Scale <input type="number" th:field="*{scoreScale}" id="ScaleScore" min=0  disabled> </p>
-			<p>Amount Scored Switch <input type="number" th:field="*{scoreSwitch}" id="SwitchScore" min=0  disabled> </p>
-			<p>Amount Scored Vault <input type="number" th:field="*{scoreVault}" id="VaultScore"min=0 disabled> </p>
+			<p>Amount Scored Scale <input type="number" th:field="*{scoreScale}" id="ScaleScore" min="0"  disabled> </p>
+			<p>Amount Scored Switch <input type="number" th:field="*{scoreSwitch}" id="SwitchScore" min="0"  disabled> </p>
+			<p>Amount Scored Vault <input type="number" th:field="*{scoreVault}" id="VaultScore"min="0" disabled> </p>
 			
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Climb"> Climb <br>
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Park"> Park <br>
-			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None 
 			
 			<p><textarea th:field="*{matchNotes}" name="ScoutNotes" cols="40" rows="10">
 			Addition Scouting Notes Here</textarea></p>
