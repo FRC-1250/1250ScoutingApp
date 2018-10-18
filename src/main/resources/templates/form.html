@@ -39,9 +39,7 @@ body {background-color: #282b30}
 			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Center"> Center <br>
 			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Right"> Right <br>
 			
-			<p> Auton Successful</p>
-			<input type="radio" th:field="*{autoSuccess}" name="AutoSuccess" value="true"> Yes <br>
-			<input type="radio" th:field="*{autoSuccess}" name="AutoSuccess" value="false"> No <br>
+			<p> Auton Successful <input type="checkbox" th:field="*{autoSuccess}"></p>
 				
 			<p>Can Scale?<input type="checkbox" th:field="*{placeScale}" id="Scale" onchange="toggleScore(this.id)" ></p>
 			<p>Can Switch?<input type="checkbox" th:field="*{placeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
