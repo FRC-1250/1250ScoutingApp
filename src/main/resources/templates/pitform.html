@@ -30,52 +30,27 @@ body {background-color: #282b30}
   <form action="/gdform.php" method="post">
 <input type="hidden" name="subject" value="Form Submission" />
 <input type="hidden" name="redirect" value="one.html" />
-<p>Team Number <input type="number" name="TeamNumber"> </p>
-<p>Team Name <input type="text" name="TeamName"> </p>
+<p>Team Number <input th:field="*{teamNumber}" type="number" name="TeamNumber"> </p>
+<p>Team Name <input th:field="*{teamName}" type="text" name="TeamName"> </p>
 <p> Auton Type</p>
-<p>
-  <label>
-    <input type="checkbox" name="Auton Type" value="0" id="AutonType_0">
-    Baseline</label>
-  <br>
-  <label>
-    <input type="checkbox" name="Auton Type" value="1" id="AutonType_1">
-    Switch</label>
-  <br>
-  <label>
-    <input type="checkbox" name="Auton Type" value="2" id="AutonType_2">
-    Scale</label>
-  <br>
-	<label>
-    <input type="checkbox" name="Auton Type" value="3" id="AutonType_3">
-    None</label>
-  <br>
-</p>
+
+
+<input type="radio" th:field="*{autoType}" name="AutoType" value="Baseline"> Baseline <br>
+<input type="radio" th:field="*{autoType}" name="AutoType" value="Switch"> Switch <br>
+<input type="radio" th:field="*{autoType}" name="AutoType" value ="Scale"> Scale <br>	
+<input type="radio" th:field="*{autoType}" name="AutoType" value ="None"> None <br>	  
+
 <p>Robot Scoring Type</p>
+	 
+<p>Can Scale?<input type="checkbox"  th:field="*{robotType}" name="CanScale?"  value="CanScale" id="CanScale"></p>
+<p>Can Switch?<input type="checkbox" th:field="*{robotType}" name="CanSwitch?" value="CanSwitch" id="CanSwitch"></p>
+<p>Can Vault?<input type="checkbox" th:field="*{robotType}" name="CanVault?" value="CanVault" id="CanVault"></p>
 
-<table width="200">
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="0" id="Scoringtype_0">
-      Scale</label></td>
-  </tr>
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="1" id="Scoringtype_1">
-      Switch</label></td>
-  </tr>
-  <tr>
-    <td><label>
-      <input type="checkbox" name="Scoring type" value="2" id="Scoringtype_2">
-      Vault</label></td>
-  </tr>
-</table>
+<p>Scale Score Claim <input th:field="*{scaleClaim}" type="number" name="Scale Claim"> </p>
+<p>Switch Score Claim <input th:field="*{switchClaim}" type="number" name="Switch Claim"> </p>
+<p>Vault Score Claim <input th:field="*{vaultClaim}" type="number" name="Vault Claim"> </p>
 
-<p>Scale Score Claim <input type="number" name="Scale Claim"> </p>
-<p>Switch Score Claim <input type="number" name="Scale Claim"> </p>
-<p>Vault Score Claim <input type="number" name="Scale Claim"> </p>
-
-<p><textarea name="ScoutNotes" cols="40" rows="10">
+<p><textarea th:field="*{pitNotes}" name="ScoutNotes" cols="40" rows="10">
 Addition Scouting Notes Here</textarea></p>
 <input type="submit">
 </form>
