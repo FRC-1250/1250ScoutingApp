@@ -1,12 +1,5 @@
 package match;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import frc.team1250.Mariadb;
-
 final public class MatchDataModel {
 
 	private enum autoPositions {
@@ -143,7 +136,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreScale(int scoreScale) {
-		if(scoreScale > 0)
+		if(scoreScale >= 0)
 			this.scoreScale = scoreScale;
 		else
 			throw new IllegalArgumentException();
@@ -154,7 +147,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreSwitch(int scoreSwitch) {
-		if(scoreSwitch > 0)
+		if(scoreSwitch >= 0)
 			this.scoreSwitch = scoreSwitch;
 		else
 			throw new IllegalArgumentException();
@@ -165,7 +158,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreVault(int scoreVault) {
-		if(scoreVault > 0)
+		if(scoreVault >= 0)
 			this.scoreVault = scoreVault;
 		else
 			throw new IllegalArgumentException();
@@ -192,38 +185,6 @@ final public class MatchDataModel {
 
 	public void setMatchNotes(String notes) {
 		this.matchNotes = notes;
-	}
-	
-	public void insertMatch() {
-		Connection conn = null;
-		
-		try {
-			conn = Mariadb.GetConnection();
-			String query= "INSERT INTO `match` "
-	    			+ "(matchNumber, teamNumber, autoPosition, autoType, autoSuccess, placeSwitch, "
-	    			+ "placeScale, placeVault, scoreScale, scoreSwitch, scoreVault, endGameAction, "
-	    			+ "notes) "
-	    			+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-			PreparedStatement stmt = conn.prepareStatement(query);
-			stmt.setInt(1, matchNumber);
-			stmt.setInt(2, teamNumber);
-			stmt.setString(3, autoPosition);
-			stmt.setString(4, autoType);
-			stmt.setBoolean(5, autoSuccess);
-			stmt.setBoolean(6, placeSwitch);
-			stmt.setBoolean(7, placeScale);
-			stmt.setBoolean(8, placeVault);
-			stmt.setInt(9, scoreScale);
-			stmt.setInt(10, scoreSwitch);
-			stmt.setInt(11, scoreVault);
-			stmt.setString(12, endGameAction);
-			stmt.setString(13, matchNotes);
-			stmt.executeUpdate();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }
 
