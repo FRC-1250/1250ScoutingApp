@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Match Scouting</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+<style>
+body {background-color: #282b30}
+
+	
+	h1 {color: #ffffff}
+	p {color: #ffffff}
+	table {color: #ffffff}
+	nav {color:#ffffff}
+	h1 {background: #23272a}
+	h1 {color: #7289da}
+	h1{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}	
+	nav {color: #7289da}
+	p{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-size: 200%}
+	h1{font-size: 400%}
+	
+	
+	
+</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Gatorbots Scouting</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li> 
+        <li><a href="/match">Match Scouting</a></li>
+        <li><a href="/pit">Pit Scouting</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+	<div class="eform">
+		<form action="#" th:action="@{/match}" th:object="${match}" method="post" >
+			<input type="hidden" name="subject" value="Form Submission" />
+			<input type="hidden" name="redirect" value="one.html" />
+			
+			<p>Team Number <input type="number" th:field="*{teamNumber}" name="TeamNumber" min="1" value="1"> </p>
+			<p>Match Number <input type="number" th:field="*{matchNumber}" name="MatchNumber" min="1" value="1"> </p>
+			<p> Auton Type</p>
+			
+			<input type="radio" th:field="*{autoType}" name="AutoType" value="Baseline"> Baseline <br>
+			<input type="radio" th:field="*{autoType}" name="AutoType" value="Switch"> Switch <br>
+			<input type="radio" th:field="*{autoType}" name="AutoType" value="Scale"> Scale <br>
+			
+			<p> Auton Position</p>
+			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Left"> Left <br>
+			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Center"> Center <br>
+			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Right"> Right <br>
+			
+			<p> Auton Successful <input type="checkbox" th:field="*{autoSuccess}"></p>
+				
+			<p>Can Scale?<input type="checkbox" th:field="*{placeScale}" id="Scale" onchange="toggleScore(this.id)" ></p>
+			<p>Can Switch?<input type="checkbox" th:field="*{placeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
+			<p>Can Vault?<input type="checkbox" th:field="*{placeVault}" id="Vault" onchange="toggleScore(this.id)"></p>
+				
+			<p>Amount Scored Scale <input type="number" th:field="*{scoreScale}" id="ScaleScore" min="0"  disabled> </p>
+			<p>Amount Scored Switch <input type="number" th:field="*{scoreSwitch}" id="SwitchScore" min="0"  disabled> </p>
+			<p>Amount Scored Vault <input type="number" th:field="*{scoreVault}" id="VaultScore"min="0" disabled> </p>
+			
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Climb"> Climb <br>
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Park"> Park <br>
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None 
+			
+			<p><textarea th:field="*{matchNotes}" name="ScoutNotes" cols="40" rows="10">
+			Addition Scouting Notes Here</textarea></p>
+			<input type="submit">
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+function toggleScore(id) {
+	 var checkBox = document.getElementById(id);
+	 var field = document.getElementById(id + "Score");   
+	 
+	 if (checkBox.checked == true){
+	    field.disabled = false;
+    } else {
+    	field.disabled = true;
+    	field.value = "0";
+    }
+}
+</script>
+</html>
