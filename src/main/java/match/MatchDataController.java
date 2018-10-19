@@ -30,19 +30,19 @@ public class MatchDataController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-    	return "test";
+    	return "test/MatchFormOutputTest";
     }
     
     @GetMapping("/match")
     public String getMatchForm(Model model) {
     	model.addAttribute("match", new MatchDataModel());
-    	return "form";
+    	return "MatchForm";
     }
     
     //Specifying the value inside of the @ModelAttribute is required if the class name
     //does not match the name of entity submitted
     @PostMapping("/match")
     public String matchFormSubmit(@ModelAttribute("match") MatchDataModel match) {
-    	return "test";
+    	return "test/MatchFormOutputTest";
     }
 }

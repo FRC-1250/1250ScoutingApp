@@ -31,17 +31,17 @@ public class PitDataController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-    	return "test.html";
+    	return "test/PitFormOutputTest";
     }
     
     @GetMapping("/pit")
     public String getPitForm(Model model) {
-    	model.addAttribute(new PitDataModel());
-    	return "pitform.html";
+    	model.addAttribute("pit", new PitDataModel());
+    	return "PitForm";
     }
     
     @PostMapping("/pit")
-    public String pitFormSubmit(@ModelAttribute PitDataModel data) {
-        return "result";
+    public String pitFormSubmit(@ModelAttribute("pit") PitDataModel data) {
+        return "test/PitFormOutputTest";
     }
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>G</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+	<p th:text="'TeamNumber: ' + ${pit.teamNumber}" />
+    <p th:text="'MatchNumber: ' + ${pit.teamName}" />
+    <p th:text="'ScaleClaim: ' + ${pit.scaleClaim}" />
+    <p th:text="'SwitchClaim: ' + ${pit.switchClaim}" />
+    <p th:text="'VaultClaim: ' + ${pit.vaultClaim}" />
+    <p th:text="'PitNotes: ' + ${pit.pitNotes}" />
+	<p th:text="'AutoBase: ' + ${pit.autoBase}" />
+	<p th:text="'AutoSwitch: ' + ${pit.autoSwitch}" />
+	<p th:text="'AutoScale: ' + ${pit.autoScale}" />
+	<p th:text="'typeScale: ' + ${pit.typeScale}" />
+	<p th:text="'typeSwitch: ' + ${pit.typeSwitch}" />
+	<p th:text="'typeVault: ' + ${pit.typeVault}" />
+</body>
+</html>

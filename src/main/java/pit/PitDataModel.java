@@ -72,7 +72,7 @@ final public class PitDataModel {
 		this.autoSwitch = autoSwitch;
 	}
 	
-	public boolean istypeScale() {
+	public boolean isTypeScale() {
 		return typeScale;
 	}
 	
@@ -80,7 +80,7 @@ final public class PitDataModel {
 		this.typeScale = typeScale;
 	}
 	
-	public boolean istypeSwitch() {
+	public boolean isTypeSwitch() {
 		return typeSwitch;
 	}
 	
@@ -98,7 +98,7 @@ final public class PitDataModel {
 	}
 	
 	
-	public boolean istypeVault() {
+	public boolean isTypeVault() {
 		return typeVault;
 	}
 	
