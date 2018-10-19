@@ -19,7 +19,7 @@ public class Mariadb {
     static final String USER = "root";
     static final String PASS = "root";
         
-    private static Connection GetConnection() throws SQLException {
+    public static Connection GetConnection() throws SQLException {
 		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
     	return conn;
     }

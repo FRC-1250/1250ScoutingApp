@@ -44,6 +44,7 @@ public class MatchDataController {
     //does not match the name of entity submitted
     @PostMapping("/match")
     public String matchFormSubmit(@ModelAttribute("match") MatchDataModel match) {
+    	match.insertMatch();
     	return "test/MatchFormOutputTest";
     }
 }
