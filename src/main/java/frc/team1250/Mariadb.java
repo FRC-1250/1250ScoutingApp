@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.sql.rowset.CachedRowSet;
+import javax.sql.rowset.RowSetProvider;
+
 import java.sql.ResultSet;
 
 public class Mariadb {
@@ -14,7 +18,7 @@ public class Mariadb {
     //  Database credentials
     static final String USER = "root";
     static final String PASS = "root";
-    
+        
     private static Connection GetConnection() throws SQLException {
 		Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
     	return conn;
@@ -47,16 +51,19 @@ public class Mariadb {
 		}
 	}
 
-	public static ResultSet Query(String sqlQuery) {
+	public static CachedRowSet Query(String sqlQuery) {
 		Connection queryConnection = null;
 		Statement queryStatement = null;
 		ResultSet queryResults = null;
+		CachedRowSet cache = null;
 		
 		try {
 			queryConnection = GetConnection();
 			queryStatement = queryConnection.createStatement();
 			queryResults = queryStatement.executeQuery(sqlQuery);
-			return queryResults;
+			cache = RowSetProvider.newFactory().createCachedRowSet();
+			cache.populate(queryResults);
+			return cache;
 		}
 		catch (SQLException ex) {
 			ex.printStackTrace();
@@ -64,9 +71,9 @@ public class Mariadb {
 		finally {
 			CloseConnection(queryConnection);
 			CloseStatement(queryStatement);
-			//CloseResultSet(queryResults);
+			CloseResultSet(queryResults);
 		}
-		return queryResults;
+		return cache;
 	}
 	
 	public static int Update(String sqlQuery) {
