@@ -1,7 +1,9 @@
 package pit;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.sql.rowset.CachedRowSet;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +22,7 @@ public class PitDataController {
 
 		try {
 	    	sql = "Select * FROM `pit` WHERE teamNumber=" + teamNumber;
-			ResultSet set = Mariadb.Query(sql);		
+	    	CachedRowSet set = Mariadb.Query(sql);		
 			set.last();
 			PitDataModel data = new PitDataModel(set.getInt("teamNumber"), set.getString("teamName"), set.getInt("scaleClaim")
 					, set.getInt("switchClaim"), set.getInt("vaultClaim"), set.getString("pitNotes"), set.getBoolean("autoBase")
@@ -28,6 +30,7 @@ public class PitDataController {
 					, set.getBoolean("typeVault"));
 						
 			model.addAttribute("pit", data);
+			set.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
