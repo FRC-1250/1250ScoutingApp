@@ -44,12 +44,9 @@ body {background-color: #282b30}
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-     
-
-      
-        <li><a href="#">Match Scouting</a></li>
-        <li><a href="#">Pit Scouting</a></li>
+        <li class="active"><a href="index.html">Home</a></li> 
+        <li><a href="/match">Match Scouting</a></li>
+        <li><a href="/pit">Pit Scouting</a></li>
       </ul>
 
     </div>
@@ -60,10 +57,10 @@ body {background-color: #282b30}
 			<input type="hidden" name="subject" value="Form Submission" />
 			<input type="hidden" name="redirect" value="one.html" />
 			
-			<p>Team Number <input type="number" th:field="*{teamNumber}" name="TeamNumber" min="1" > </p>
-			<p>Match Number <input type="number" th:field="*{matchNumber}" name="MatchNumber" min="1" > </p>
-			
+			<p>Team Number <input type="number" th:field="*{teamNumber}" name="TeamNumber" min="1" value="1"> </p>
+			<p>Match Number <input type="number" th:field="*{matchNumber}" name="MatchNumber" min="1" value="1"> </p>
 			<p> Auton Type</p>
+			
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Baseline"> Baseline <br>
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Switch"> Switch <br>
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Scale"> Scale <br>
@@ -74,6 +71,7 @@ body {background-color: #282b30}
 			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Right"> Right <br>
 			
 			<p> Auton Successful <input type="checkbox" th:field="*{autoSuccess}"></p>
+				
 			<p>Can Scale?<input type="checkbox" th:field="*{placeScale}" id="Scale" onchange="toggleScore(this.id)" ></p>
 			<p>Can Switch?<input type="checkbox" th:field="*{placeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
 			<p>Can Vault?<input type="checkbox" th:field="*{placeVault}" id="Vault" onchange="toggleScore(this.id)"></p>
