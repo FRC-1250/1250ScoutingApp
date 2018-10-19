@@ -3,8 +3,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Match Scouting</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 <style>
 body {background-color: #282b30}
+
+	
 	h1 {color: #ffffff}
 	p {color: #ffffff}
 	table {color: #ffffff}
@@ -17,10 +25,36 @@ body {background-color: #282b30}
 	nav{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
 	nav{font-size: 200%}
 	h1{font-size: 400%}
+	
+	
+	
 </style>
 </head>
+
 <body>
-<h1><img src="https://media.discordapp.net/attachments/404467720797552644/498583752176566272/051818_SPACE.png" width="102" height="88" alt=""/>Match Scouting</h1>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Gatorbots Scouting</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+     
+
+      
+        <li><a href="#">Match Scouting</a></li>
+        <li><a href="#">Pit Scouting</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
 	<div class="eform">
 		<form action="#" th:action="@{/match}" th:object="${match}" method="post" >
 			<input type="hidden" name="subject" value="Form Submission" />
@@ -44,13 +78,13 @@ body {background-color: #282b30}
 			<p>Can Switch?<input type="checkbox" th:field="*{placeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
 			<p>Can Vault?<input type="checkbox" th:field="*{placeVault}" id="Vault" onchange="toggleScore(this.id)"></p>
 				
-			<p>Amount Scored Scale <input type="number" th:field="*{scoreScale}" id="ScaleScore" min=0  disabled> </p>
-			<p>Amount Scored Switch <input type="number" th:field="*{scoreSwitch}" id="SwitchScore" min=0  disabled> </p>
-			<p>Amount Scored Vault <input type="number" th:field="*{scoreVault}" id="VaultScore"min=0 disabled> </p>
+			<p>Amount Scored Scale <input type="number" th:field="*{scoreScale}" id="ScaleScore" min="0"  disabled> </p>
+			<p>Amount Scored Switch <input type="number" th:field="*{scoreSwitch}" id="SwitchScore" min="0"  disabled> </p>
+			<p>Amount Scored Vault <input type="number" th:field="*{scoreVault}" id="VaultScore"min="0" disabled> </p>
 			
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Climb"> Climb <br>
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Park"> Park <br>
-			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None 
 			
 			<p><textarea th:field="*{matchNotes}" name="ScoutNotes" cols="40" rows="10">
 			Addition Scouting Notes Here</textarea></p>
