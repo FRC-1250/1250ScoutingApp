@@ -64,6 +64,7 @@ body {background-color: #282b30}
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Baseline"> Baseline <br>
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Switch"> Switch <br>
 			<input type="radio" th:field="*{autoType}" name="AutoType" value="Scale"> Scale <br>
+			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="None" checked> None <br>
 			
 			<p> Auton Position</p>
 			<input type="radio" th:field="*{autoPosition}" name="AutoPosition" value="Left"> Left <br>
@@ -82,7 +83,7 @@ body {background-color: #282b30}
 			
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Climb"> Climb <br>
 			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="Park"> Park <br>
-			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None"> None 
+			<input type="radio" th:field="*{endGameAction}" name="EndGameAction" value="None" checked> None 
 			
 			<p><textarea th:field="*{matchNotes}" name="ScoutNotes" cols="40" rows="10">
 			Addition Scouting Notes Here</textarea></p>
