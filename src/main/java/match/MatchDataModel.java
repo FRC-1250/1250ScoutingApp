@@ -35,6 +35,10 @@ final public class MatchDataModel {
 	}
 
 	public MatchDataModel() {
+		setMatchNumber(1);
+		setTeamNumber(1);
+		setAutoType("None");
+		setEndGameAction("None");
 	}
 
 	public int getMatchNumber() {
