@@ -34,6 +34,7 @@ final public class PitDataModel {
 	}
 
 	public PitDataModel() {
+		setTeamNumber(1);
 	}
 
 	public int getTeamNumber() {
