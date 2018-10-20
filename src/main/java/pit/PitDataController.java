@@ -19,6 +19,19 @@ public class PitDataController {
 		return "test/PitFormOutputTest";
 	}
 
+	@GetMapping("/pit/update/{teamNumber}")
+	public String updateTeam(Model model, @PathVariable int teamNumber) {
+		PitDataModel pit = pitDataAccess.getTeam(teamNumber);
+		model.addAttribute("pit", pit);
+		return "PitFormUpdate";
+	}
+
+	@PostMapping("/pit/update")
+	public String updateTeam(@ModelAttribute("pit") PitDataModel pit) {
+		pitDataAccess.updateTeam(pit);
+		return "test/PitFormOutputTest";
+	}
+
 	@GetMapping("/pit")
 	public String getPitForm(Model model) {
 		model.addAttribute("pit", new PitDataModel());

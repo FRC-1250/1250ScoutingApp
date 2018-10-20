@@ -67,8 +67,46 @@ public class PitDataAccess {
 		return numberOfRowsEffected;
 	}
 
+	public int updateTeam(PitDataModel pit) {
+		String sql = "UPDATE `pit` SET scaleClaim=?, switchClaim=?, vaultClaim=?, "
+				+ "pitNotes=?, autoBase=?, autoSwitch=?, autoScale=?, typeScale=?,"
+				+ "typeSwitch=?, typeVault=? WHERE teamNumber=?";
+		conn = DatabaseHelper.GetConnection();
+		int numberOfRowsEffected = 0;
+
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, pit.getScaleClaim());
+			stmt.setInt(2, pit.getSwitchClaim());
+			stmt.setInt(3, pit.getVaultClaim());
+			stmt.setString(4, pit.getPitNotes());
+			stmt.setBoolean(5, pit.isAutoBase());
+			stmt.setBoolean(6, pit.isAutoSwitch());
+			stmt.setBoolean(7, pit.isAutoScale());
+			stmt.setBoolean(8, pit.isTypeScale());
+			stmt.setBoolean(9, pit.isTypeSwitch());
+			stmt.setBoolean(10, pit.isTypeVault());
+			stmt.setInt(11, pit.getTeamNumber());
+			numberOfRowsEffected = stmt.executeUpdate();
+			return numberOfRowsEffected;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return numberOfRowsEffected;
+
+	}
+
 	public int insertTeam(PitDataModel pit) {
-		String sql = "INSERT INTO pit (teamNumber, teamName, scaleClaim, switchClaim, "
+		String sql = "INSERT INTO `pit` (teamNumber, teamName, scaleClaim, switchClaim, "
 				+ "vaultClaim, pitNotes, autoBase, autoSwitch, autoScale, typeScale, " + "typeSwitch, typeVault) "
 				+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		conn = DatabaseHelper.GetConnection();
