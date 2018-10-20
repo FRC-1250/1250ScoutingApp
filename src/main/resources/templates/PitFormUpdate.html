@@ -48,12 +48,12 @@
 </nav>
 	
 <div class="eform">
-	<form action="#" th:action="@{/pit}" th:object="${pit}" method="post">
+	<form action="#" th:action="@{/pit/update}" th:object="${pit}" method="post">
 		<input type="hidden" name="subject" value="Form Submission" />
 		<input type="hidden" name="redirect" value="one.html" />
 		
-		<p>Team Number <input type="number" th:field="*{teamNumber}" name="TeamNumber" min="1"> </p>
-		<p>Team Name <input type="text" th:field="*{teamName}" name="TeamName" min="1"> </p>
+		<p>Team Number <input type="number" th:field="*{teamNumber}" name="TeamNumber" min="1" readonly> </p>
+		<p>Team Name <input type="text" th:field="*{teamName}" name="TeamName" min="1" readonly> </p>
 		
 		<p>Auton Type</p>
 		<p>Baseline<input type="checkbox"  th:field="*{autoBase}"></p>
@@ -61,13 +61,13 @@
 		<p>Scale<input type="checkbox" th:field="*{autoScale}"></p>
 		
 		<p>Robot Scoring Type</p>
-		<p>Can Scale?<input type="checkbox" th:field="*{typeScale}" id="Scale" onchange="toggleScore(this.id)"></p>
-		<p>Can Switch?<input type="checkbox" th:field="*{typeSwitch}" id="Switch" onchange="toggleScore(this.id)"></p>
-		<p>Can Vault?<input type="checkbox" th:field="*{typeVault}" id="Vault" onchange="toggleScore(this.id)"></p>
+		<p>Can Scale?<input type="checkbox" th:field="*{typeScale}" id="Scale" onchange="toggleScore(this.id)" onload="toggleScore(this.id)"></p>
+		<p>Can Switch?<input type="checkbox" th:field="*{typeSwitch}" id="Switch" onchange="toggleScore(this.id)" onload="toggleScore(this.id)"></p>
+		<p>Can Vault?<input type="checkbox" th:field="*{typeVault}" id="Vault" onchange="toggleScore(this.id)" onload="toggleScore(this.id)"></p>
 		
-		<p>Scale Score Claim <input type="number" th:field="*{scaleClaim}"  id="ScaleClaim" min="0" disabled> </p>
-		<p>Switch Score Claim <input type="number" th:field="*{switchClaim}"  id="SwitchClaim" min="0" disabled> </p>
-		<p>Vault Score Claim <input type="number" th:field="*{vaultClaim}"  id="VaultClaim" min="0" disabled> </p>
+		<p>Scale Score Claim <input type="number" th:field="*{scaleClaim}"  id="ScaleClaim" min="0" > </p>
+		<p>Switch Score Claim <input type="number" th:field="*{switchClaim}"  id="SwitchClaim" min="0" > </p>
+		<p>Vault Score Claim <input type="number" th:field="*{vaultClaim}"  id="VaultClaim" min="0" > </p>
 		
 		<p><textarea th:field="*{pitNotes}" name="ScoutNotes" cols="40" rows="10">
 		Addition Scouting Notes Here</textarea></p>

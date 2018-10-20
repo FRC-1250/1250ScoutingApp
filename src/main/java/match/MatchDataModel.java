@@ -136,7 +136,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreScale(int scoreScale) {
-		if(scoreScale > 0)
+		if(scoreScale >= 0)
 			this.scoreScale = scoreScale;
 		else
 			throw new IllegalArgumentException();
@@ -147,7 +147,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreSwitch(int scoreSwitch) {
-		if(scoreSwitch > 0)
+		if(scoreSwitch >= 0)
 			this.scoreSwitch = scoreSwitch;
 		else
 			throw new IllegalArgumentException();
@@ -158,7 +158,7 @@ final public class MatchDataModel {
 	}
 	
 	public void setScoreVault(int scoreVault) {
-		if(scoreVault > 0)
+		if(scoreVault >= 0)
 			this.scoreVault = scoreVault;
 		else
 			throw new IllegalArgumentException();
@@ -187,3 +187,18 @@ final public class MatchDataModel {
 		this.matchNotes = notes;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
