@@ -11,17 +11,21 @@
 <style>
 	body {background-color: #282b30}
 	h1 {color: #ffffff}
-	p {color: #000000}
+	p {color: #afc6b5}
 	table {color: #ffffff}
 	nav {color:#ffffff}
 	h1 {background: #23272a}
 	h1 {color: #7289da}
 	h1{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}	
-	nav {color: #7289da}
+	nav {color: #ffffff}
 	p{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
 	nav{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
 	nav{font-size: 200%}
 	h1{font-size: 400%}	
+	input {background-color:  #504646}
+	input {border-color:  #504646}
+	textarea {background-color: #504646}
+	checkbox {background-color: #504646}
 </style>
 </head>
 <body>
@@ -56,7 +60,7 @@
 		<p>Team Name <input type="text" th:field="*{teamName}" name="TeamName" min="1"> </p>
 		
 		<p>Auton Type</p>
-		<p>Baseline<input type="checkbox"  th:field="*{autoBase}"></p>
+		<p>Baseline<input type="checkbox" background-color: #504646  th:field="*{autoBase}"></p>
 		<p>Switch<input type="checkbox" th:field="*{autoSwitch}"></p>
 		<p>Scale<input type="checkbox" th:field="*{autoScale}"></p>
 		
