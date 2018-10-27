@@ -9,8 +9,8 @@ public class DatabaseHelper {
     private static final String DB_URL = "jdbc:mariadb://127.0.0.1:3306/frc";
 
     //  Database credentials
-    private static final String USER = "root";
-    private static final String PASS = "root";
+    private static final String USER = "maria";
+    private static final String PASS = "FRC1250";
     
     private static Connection conn;
         
