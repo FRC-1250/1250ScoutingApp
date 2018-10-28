@@ -1,5 +1,7 @@
 package match;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MatchDataController {
 
 	MatchDataAccess matchDataAccess = new MatchDataAccess();
+	
+	@GetMapping("/match/all")
+	public String getAllMatchs(Model model) {
+		ArrayList<MatchDataModel> matchList = matchDataAccess.getAllMatch();
+		model.addAttribute("matchList", matchList);
+		return "MatchAllData";
+	}
 	
     @GetMapping("/match/{matchNumber}")
     public String getMatch(Model model, @PathVariable int matchNumber) {

@@ -54,7 +54,7 @@ public class MatchDataAccess {
 			rs = stmt.executeQuery();
 			while(rs.next()) {	
 				MatchDataModel match = new MatchDataModel(rs.getInt("matchNumber"), rs.getInt("teamNumber"), rs.getString("autoPosition"),rs.getString("autoType"), 
-						rs.getBoolean("autoSuccess"), rs.getBoolean("placeSwitch"), rs.getBoolean("placeScale"), rs.getBoolean("placePort"), 
+						rs.getBoolean("autoSuccess"), rs.getBoolean("placeSwitch"), rs.getBoolean("placeScale"), rs.getBoolean("placeVault"), 
 						rs.getInt("scoreScale"), rs.getInt("scoreSwitch"), rs.getInt("scoreVault"), rs.getString("endGameAction"), rs.getString("notes"));
 				matchList.add(match);
 			}

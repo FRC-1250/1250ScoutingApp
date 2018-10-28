@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Match Scouting</title>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	
+<style>
+body {background-color: #282b30}
+
+	
+	h1 {color: #ffffff}
+	p {color: #afc6b5}
+	table {color: #ffffff}
+	nav {color:#ffffff}
+	h1 {background: #23272a}
+	h1 {color: #7289da}
+	h1{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}	
+	nav {color: #7289da}
+	p{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif"}
+	nav{font-size: 200%}
+	h1{font-size: 400%}
+	form {color: #afc6b5}
+	input {background-color:  #504646}
+	input {border-color:  #504646}
+	textarea {background-color: #504646}
+	checkbox {background-color: #504646}
+	
+	
+</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Gatorbots Scouting</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li> 
+        <li class="active"><a href="/match">Match Scouting</a></li>
+        <li><a href="/pit">Pit Scouting</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <table class="table">
+    <tr>
+    	<th>Team number</th>
+  	  	<th>Match number</th>
+  	  	<th>Auto type</th>
+  	  	<th>Auto Pos</th>
+  	  	<th>Auto Success</th>
+  	  	<th>Place switch</th>
+  	  	<th>Place scale</th>
+  	  	<th>Place vault</th>
+  	  	<th>Score switch</th>
+  	  	<th>Score Scale</th>
+  	  	<th>Score Vault</th>
+  	  	<th>End game</th>
+  	  	<th>Notes</th>
+    </tr> 
+		<tr th:each="match, index : ${matchList}">
+			<td th:text="${match.teamNumber}" />
+			<td th:text="${match.matchNumber}" />
+			<td th:text="${match.autoType}" />
+			<td th:text="${match.autoPosition}" />
+			<td th:text="${match.autoSuccess}" />
+			<td th:text="${match.placeSwitch}" />
+			<td th:text="${match.placeScale}" />
+			<td th:text="${match.placeVault}" />
+			<td th:text="${match.scoreSwitch}" />
+			<td th:text="${match.scoreScale}" />
+			<td th:text="${match.scoreVault}" />
+			<td th:text="${match.endGameAction}" />
+			<td th:text="${match.matchNotes}" />
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>
